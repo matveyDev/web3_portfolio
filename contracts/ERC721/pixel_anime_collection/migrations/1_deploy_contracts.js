@@ -1,5 +1,5 @@
-const Dudes721Token = artifacts.require("../contracts/Dudes.sol");
+const AnimeTyans = artifacts.require("../contracts/AnimeTyans.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Dudes721Token);
+  deployer.deploy(AnimeTyans, 'ipfs://QmPtugKUCUyRgVb8vYdjKoPWDo5UpgQ1jnhFXqEbXzsYw1/', 20);
 };
