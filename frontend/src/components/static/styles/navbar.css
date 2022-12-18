@@ -1,0 +1,19 @@
+.navbar__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 0 2rem 0;
+}
+
+.navbar__links > a {
+  font-size: 40px;
+  padding: 0 20px;
+
+  transition-duration: 0.5s;
+  transition-property: color;
+
+}
+
+.navbar__links :hover {
+  color: #C69749;
+}

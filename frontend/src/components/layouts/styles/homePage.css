@@ -1,0 +1,30 @@
+.homePage {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.homePage__links {
+  display: flex;
+}
+
+.homePage__links > a {
+  color: #f6bb5e;
+  font-size: 30px;
+  padding: 0 30px;
+}
+
+.homePage__links :first-child {
+  padding-left: 0;
+}
+
+.homePage__links :last-child {
+  padding-right: 0;
+}
+
+.homePage_hr {
+  width: 55rem;
+  margin: 25px 0;
+}
