@@ -1,9 +1,10 @@
 import React from 'react';
 
 
-const CollectionCard = (props) => {
+const CollectionCard = ({data}) => {
   return (
-    <div className='collection-card'>dsa
+    <div className='collection-card'>
+      {data.name}
     </div>
   );
 };
