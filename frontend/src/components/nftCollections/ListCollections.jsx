@@ -20,6 +20,7 @@ const ListCollections = () => {
       const _name = await instance.methods.name().call();
       const _totalSupply = await instance.methods.totalSupply().call();
       const _maxSupply = await instance.methods.maxSupply().call();
+      // First token image
       const _tokenURI = await instance.methods.tokenURI(1).call();
       const _imageURI = await getImageUri(_tokenURI);
 

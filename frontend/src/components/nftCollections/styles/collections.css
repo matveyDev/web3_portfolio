@@ -1,5 +1,5 @@
 .nft-collections {
-  width: 60rem;
+  width: 80rem;
 
   display: flex;
   flex-direction: row;
@@ -12,10 +12,12 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  font-size: 25px;
+  font-size: 27px;
   border-radius: 10px;
   box-shadow: 1px 1px 12px 1px #735F32;
   margin-bottom: 15px;
+  align-items: center;
+  max-width: 400px;
 }
 
 .collection-card:hover {
@@ -41,5 +43,35 @@
 
 .collection-card__title {
   margin: 10px 0;
-  align-self: center;
+}
+
+.collection-card__minted {
+  font-size: 22px;
+  padding-bottom: 2px;
+}
+
+.collection-card__btn-mint {
+  padding-top: 10px;
+}
+
+.collection-card__btn-mint button {
+  border: none;
+  color: white;
+  transition-duration: 0.25s;
+  font-size: 25px;
+  padding: 10px 0;
+  width: 100vw;
+}
+
+.non-soldout {
+  background-color: #b08541;
+}
+
+.non-soldout:hover {
+  cursor: pointer;
+  background-color: #C69749;
+}
+
+.soldout {
+  background-color: #735F32;
 }
