@@ -20,7 +20,7 @@ const _getInstances = () => {
     const collection = NFT_COLLECTIONS[name];
     contractInstances.push(
       new web3.eth.Contract(collection.ABI, collection.CONTRACT_ADDRESS)
-    )
+    );
   };
   return contractInstances;
 };
