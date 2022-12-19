@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import './styles/collections.css'
-import { contractInstances } from '../../index';
+import { web3, contractInstances } from '../../index';
 import CollectionCard from './CollectionCard';
 
 
@@ -24,13 +24,24 @@ const ListCollections = () => {
       const _tokenURI = await instance.methods.tokenURI(1).call();
       const _imageURI = await getImageUri(_tokenURI);
 
+      let _mintCost;
+      try {
+        _mintCost = await instance.methods.mintCost().call();
+        _mintCost = web3.utils.fromWei(_mintCost, 'ether');
+      } catch(error) {
+        _mintCost = '0';
+        console.log(error);
+      }
+
       setNftData((prevData) => [
         ...prevData,
         {
           name: _name,
           totalSupply: _totalSupply,
           maxSupply: _maxSupply,
-          imageURI: _imageURI
+          imageURI: _imageURI,
+          mintCost: _mintCost,
+          contractInstace: instance,
         }
       ])
     });
@@ -41,7 +52,7 @@ const ListCollections = () => {
     const response = await fetch(url)
       .then(resp => resp.json())
       .catch(err => console.log(err))
-    
+
     const result = baseURI + response.image.slice(7);
     return result;
   };

@@ -47,7 +47,11 @@
 
 .collection-card__minted {
   font-size: 22px;
-  padding-bottom: 2px;
+}
+
+.collection-card__mint-cost {
+  font-size: 22px;
+  padding-top: 7px;
 }
 
 .collection-card__btn-mint {
