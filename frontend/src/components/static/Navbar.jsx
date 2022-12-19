@@ -5,7 +5,7 @@ import './styles/navbar.css';
 
 
 const setActive = ({isActive}) => {
-  return isActive ? 'active' : 'non-active';
+  return isActive ? 'active-nav' : 'non-active';
 };
 
 

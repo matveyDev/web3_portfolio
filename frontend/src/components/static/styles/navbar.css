@@ -17,6 +17,10 @@
   transition-property: color;
 }
 
+.active-nav {
+  color: #C69749;
+}
+
 .navbar__links :hover {
   color: #C69749;
 }
