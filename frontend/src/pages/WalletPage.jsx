@@ -5,7 +5,7 @@ import './styles/pages.css'
 
 const WalletPage = () => {
   return (
-    <div className='page'>
+    <div className='page page__wallet'>
       <h1>WALLETPAGE</h1>
     </div>
   );

@@ -3,3 +3,7 @@
   flex-direction: column;
   align-items: center;
 }
+
+.page__wallet {
+  animation: 1s show ease;
+}
