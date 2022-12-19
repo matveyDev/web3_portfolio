@@ -5,6 +5,9 @@ import { contractInstances } from '../../index';
 import CollectionCard from './CollectionCard';
 
 
+const baseURI = 'https://gateway.pinata.cloud/ipfs/';
+
+
 const ListCollections = () => {
   const [nftData, setNftData] = useState([]);
 
@@ -17,16 +20,29 @@ const ListCollections = () => {
       const _name = await instance.methods.name().call();
       const _totalSupply = await instance.methods.totalSupply().call();
       const _maxSupply = await instance.methods.maxSupply().call();
+      const _tokenURI = await instance.methods.tokenURI(1).call();
+      const _imageURI = await getImageUri(_tokenURI);
 
       setNftData((prevData) => [
         ...prevData,
         {
           name: _name,
           totalSupply: _totalSupply,
-          maxSupply: _maxSupply
+          maxSupply: _maxSupply,
+          imageURI: _imageURI
         }
       ])
     });
+  };
+
+  const getImageUri = async (_tokenURI) => {
+    const url = baseURI + _tokenURI.slice(7);
+    const response = await fetch(url)
+      .then(resp => resp.json())
+      .catch(err => console.log(err))
+    
+    const result = baseURI + response.image.slice(7);
+    return result;
   };
 
   return (
@@ -34,7 +50,7 @@ const ListCollections = () => {
       {
         nftData.map((data, index) => {
           return (
-            <div key={index}><CollectionCard data={data}/></div>
+            <CollectionCard key={index} data={data}/>
           )
         })
       }
