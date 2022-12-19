@@ -4,6 +4,7 @@
   flex: 1 1 auto;
   justify-content: center;
   align-items: center;
+  animation: 1s show ease;
 }
 
 .homePage__links {
@@ -11,9 +12,15 @@
 }
 
 .homePage__links > a {
-  color: #f6bb5e;
   font-size: 30px;
   padding: 0 30px;
+
+  transition-duration: 0.5s;
+  transition-property: color;
+}
+
+.homePage__links :hover {
+  color: #f6bb5e;
 }
 
 .homePage__links :first-child {
@@ -27,4 +34,12 @@
 .homePage_hr {
   width: 55rem;
   margin: 25px 0;
+}
+
+.active {
+  color: #f6bb5e;
+}
+
+.non-active {
+  color: #735F32;
 }
