@@ -1,9 +1,44 @@
 .nft-collections {
-  width: 55rem;
+  width: 60rem;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   animation: 1.2s show ease;
+}
+
+.collection-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0 #000000;
+}
+
+.collection-card:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 15px 2px #000000;
+}
+
+.collection-card__img {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.collection-card__img img {
+  display: block;
+  width: 400px;
+  height: 400px;
+  transition: 0.25s;
+}
+
+.collection-card__img img:hover {
+  transform: scale(1.1);
+}
+
+.collection-card__title {
+  margin: 10px 0;
+  align-self: center;
 }
