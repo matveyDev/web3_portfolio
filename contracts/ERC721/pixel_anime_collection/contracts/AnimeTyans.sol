@@ -49,6 +49,28 @@ contract AnimeTyans is ERC721Enumerable, ERC721Burnable, Ownable {
         "";
     }
 
+    function walletOfOwner(address _owner) public view returns (uint256[] memory) {
+        uint256 ownerTokenCount = balanceOf(_owner);
+        uint256[] memory ownedTokenIds = new uint256[](ownerTokenCount);
+        uint256 currentTokenId = 1;
+        uint256 ownedTokenIndex = 0;
+
+        while (
+            ownedTokenIndex < ownerTokenCount && currentTokenId <= maxSupply
+        ) {
+            address currentTokenOwner = ownerOf(currentTokenId);
+
+            if (currentTokenOwner == _owner) {
+                ownedTokenIds[ownedTokenIndex] = currentTokenId;
+                ownedTokenIndex++;
+            }
+
+            currentTokenId++;
+        }
+
+        return ownedTokenIds;
+    }
+
     function togglePaused() public onlyOwner {
         paused = !paused;
     }
