@@ -15,6 +15,7 @@ contract AnimeTyans is ERC721Enumerable, ERC721Burnable, Ownable {
     string public baseURI;
     uint8 public immutable maxSupply;
     uint8 private tokenIdCounter = 1;
+    uint256 public mintCost = 0 ether;
     bool paused = false;
 
     constructor(
