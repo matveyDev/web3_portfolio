@@ -6,4 +6,9 @@
 
 .page__wallet {
   animation: 1s show ease;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1250px;
+  justify-content: space-between;
 }

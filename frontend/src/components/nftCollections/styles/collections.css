@@ -20,9 +20,21 @@
   max-width: 400px;
 }
 
+.card-hidden {
+  transition: 0.25s;
+  opacity: 0;
+  visibility: hidden;
+}
+
 .collection-card:hover {
   cursor: pointer;
   box-shadow: 1px 1px 15px 1px #C69749;
+}
+
+.collection-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .collection-card__img {
@@ -78,4 +90,8 @@
 
 .soldout {
   background-color: #735F32;
+}
+
+.detail-collection {
+
 }

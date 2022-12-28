@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ethers } from 'ethers';
 
@@ -54,15 +54,17 @@ const CollectionList = () => {
   };
 
   return (
-    <div className='nft-collections'>
-      {
-        nftData.map((data, index) => {
-          return (
-            <CollectionCard key={index} data={data}/>
-          )
-        })
-      }
-      <div><Outlet props={nftData}/></div>
+    <div>
+      <div className='nft-collections'>
+        {
+          nftData.map((data, index) => {
+            return (
+              <CollectionCard key={index} data={data}/>
+              )
+            })
+          }
+          <div><Outlet props={nftData}/></div>
+      </div>
     </div>
   );
 };

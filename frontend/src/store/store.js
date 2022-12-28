@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-// import nameReducer from './nameSlice';
+import accountReducer from './accountSlice';
+import contractSlice from './contractSlice';
 
 
 export default configureStore({
   reducer: {
-    // name: nameReducer,
+    account: accountReducer,
+    contract: contractSlice,
   },
 });
